@@ -11,7 +11,7 @@
 
 import amountMonthly from "./utils/amountMonthly"
 
-function	amountInterests(taux: number, duree: number, montant: number) {
+export default function	amountInterests(taux: number, duree: number, montant: number) {
 	let f_monthlyRate: number = (taux / 100) / 12;
 	let i_monthlyPayment: number = amountMonthly(taux, duree, montant);
 	let i_amountInterests: number = 0;

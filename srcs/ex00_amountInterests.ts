@@ -9,7 +9,7 @@
 // Cela nous permettra de calculer les intérêts de la banque pour chaque mois, et donc, pour la durée total de l'emprunt
 // Additionnons le montant des intérêts calculé à chaque mois avec le précédent pour le revoyer en retour de fonction
 
-import amountMonthly from "./utils/amount_monthly"
+import amountMonthly from "./utils/amountMonthly"
 
 function	amountInterests(taux: number, duree: number, montant: number) {
 	let f_monthlyRate: number = (taux / 100) / 12;

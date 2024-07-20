@@ -1,0 +1,32 @@
+Question:
+chercher la formule déterminant la part maximale du montant emprunté pouvant être mis sur la ligne courte (on admettra que le montant max est atteint quand la mensualité de la ligne longue pendant la Période 1 ne permet que de rembourser ses intérêts); Pour la suite de l'exercice on peut appeler cette fonction ratio(taux1, durée1, taux2, durée2)
+
+D'après l'exemple donné dans l'énoncé, nous avons deux prêts que nous devons lisser sur le temps et on sait que :
+Le premier prêt :
+	- Taux : 1.15%
+	- Durée : 15 ans (180 mois)
+	- Montant : 140000€
+
+Le deuxième prêt :
+	- Taux : 1.8%
+	- Durée : 25 ans (300 mois)
+	- Montant : 160000€
+
+Comme expliqué dans l'énoncé, le prêt lissé permet d'éviter un écart de mensualité trop important entre la durée de la période courte et la longue
+Calculons les mensualités grâce à la fonction "amountMonthly" de chaque prêt pour observer ce phénomène :
+
+Prêt numéro 1 : amountMonthly(1.15, 180, 140000) -> 847.1605046403396
+Prêt numéro 2 : amountMonthly(1.8, 300, 160000) -> 662.696328544289
+
+Si nos mensualités ne seraient pas lissé, cela reviendrait à payer 847 + 662 = 1509€ durant la période courte et uniquement 662€ durant la période longue
+
+D'après l'énoncé "on admettra que le montant max est atteint quand la mensualité de la ligne longue pendant la Période 1 ne permet que de rembourser ses intérêts" admet que le montant des intérêts du deuxième prêt pendant la première période est constante
+Calculons donc les intérêts totaux du deuxième prêt sur 300 mois grâce à la fonction de l'exercice 00:
+
+amountInterests(1.8, 300, 160000) -> 38809€
+
+Prenons ce montant et divisions le par 180 pour connaître le montant des intérêts maximum sur un mois pendant la période courte: 38809 / 180 = 215,60€
+
+D'après l'exemple, la mensualité du premier prêt + les intérêts par mois du deuxième vaudrait : 847,16 + 215,60 = 1062,76€, il manque 152,24€ pour atteindre le montant des mensualités du prêt lissé (1215,84€) -> Impasse
+
+

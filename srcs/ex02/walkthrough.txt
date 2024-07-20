@@ -1,0 +1,12 @@
+Question :
+chercher les intérêts les plus faibles parmi toutes les combinaisons possibles pour une durée du prêt total fixé
+
+Prenons comme référence le tableau donné par l'énoncé :
+Durée en année   | 10  | 12  | 15  | 20  | 22  | 25  |
+Taux annuel en % | 2.9 | 3.2 | 3.5 | 3.8 | 3.8 | 4.4 |
+
+On sait que la durée du prêt total est donnée et donc constante
+On sait aussi que nous devons chercher les combinaisons possibles parmi lesquelles les intérêts seront les plus faibles
+Nous possédons un tableau de taux annuels en % organisé par année, on sait que plus le taux est faible, plus les intérêts seront faibles
+
+TO BE CONTINUED

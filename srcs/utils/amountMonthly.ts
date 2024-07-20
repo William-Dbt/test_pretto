@@ -1,13 +1,14 @@
 /**
  * Calculate the amount of a monthly payment for a given loan with a rate, a term and an amount
+ * Thanks to the formula : loanAmount * (loanRate / (1 - (1 + loanRate)^-loanDuration))
  * 
- * @param rate		in percent
- * @param duration	in months
- * @param amount	as number
+ * @param loanRate		in percent
+ * @param loanDuration	in months
+ * @param loanAmount	as number
  * @returns @number	the amount of a monthly payment
  */
-export default function amountMonthly(rate: number, duration: number, amount: number) {
-	rate = (rate / 100) / 12;
+export default function amountMonthly(loanRate: number, loanDuration: number, loanAmount: number) {
+	loanRate = (loanRate / 100) / 12;
 
-	return (amount * (rate / (1 - Math.pow(1 + rate, -duration))));
+	return (loanAmount * (loanRate / (1 - Math.pow(1 + loanRate, -loanDuration))));
 }

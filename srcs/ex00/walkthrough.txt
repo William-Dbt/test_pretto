@@ -1,0 +1,19 @@
+Question :
+Pour un prêt donné (taux, durée et montant), calculer le montant des intérêts
+
+On sait que, pour calculer le montant des intérêts on doit utiliser la formule suivante :
+Montant Emprunté * Taux annuel / 12
+
+L'énoncé nous propose d'observer le comportement d'un prêt sur une durée de 360 mois via le fichier "simulateur-tableau-amortissement-excel-2" trouvable dans le dossier 'docs'
+
+Nous pouvons observer que la part du capital augmente et que la part des intérêts diminue au fur et à mesure qu'on avance dans le temps
+
+On sait aussi que, pour calculer le montant d'une mensualité, nous pouvons utiliser la formule suivante :
+Montant * (taux / (1 - (1 + taux)^-durée))
+Où Montant correspond au montant total emprunté, le taux est exprimé en taux mensuel (taux annuel / 12) et la durée au nombre de mois total pour rembourser le prêt
+(Cette fonction se trouvera dans le dossier 'srcs/utils')
+
+À partir de là, nous pouvons créer un algorithme où, à chaque itération, nous réduirons une mensualité (qui est fixe) du capital restant à rembourser
+De sorte que, à chaque n + 1, le montant emprunté sera égal à CapitalRestant - mensualité
+Cela nous permettra de calculer les intérêts de la banque pour chaque mois, et donc, pour la durée total de l'emprunt
+Additionnons le montant des intérêts calculé à chaque mois avec le précédent pour le revoyer en retour de fonction

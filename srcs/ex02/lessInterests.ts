@@ -37,7 +37,6 @@ function findLessInterests(loanDuration: number, loanAmount: number) {
 	}
 	// --------------------
 
-
 	// - Variables declaration
 	let	bestLoans = {
 		first: {
@@ -68,7 +67,8 @@ function findLessInterests(loanDuration: number, loanAmount: number) {
 		i_amountFirstLoan = loanAmount / 2;
 		i_amountSecondLoan = i_amountFirstLoan;
 		while (i_amountFirstLoan < loanAmount && i_amountSecondLoan > 0) {
-			// To calculate the amount of interest, we calculate the smoothly amount of the loans, multiply them by the duration in months of the loan and substract the result by the amount of the initial loan
+			// To calculate the amount of interest, we calculate the smoothly amount of the loans,
+			// multiply them by the duration in months of the loan and substract the result by the amount of the initial loan
 			// I = smoothAmount * loanDuration - loanAmount
 			i_amountInterest =
 				amountSmoothMonthly(

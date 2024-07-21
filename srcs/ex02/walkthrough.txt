@@ -26,5 +26,7 @@ Taux annuel en % | 4.4 | 3.2 | 3.5 | 3.8 | 3.8 | 2.9 |
 
 Ici, pour un prêt à 300000€ sur 25 ans, la meilleure option pour le client sera le prêt sur 12 ans à un taux de 3.2% et le prêt sur 25 ans à un taux de 2.9% tandis que pour le tableau donné par le sujet, la meilleure option sera de prendre, pour le premier prêt, la durée de 10 ans à 2.9% et celui de 25 ans à 4.4%.
 
-Observation personnel :
+Une deuxième fonction est présente, elle donne le choix du montant des deux prêts (du court et du long), le résultat est le même
+
+Conclusion :
 Étant donné le résultat de l'exercice, je pense pas que ce soit la bonne réponse attendue car on arriverait toujours au même résultat -> la meilleure option, pour le premier prêt, serait de choisir la durée pour laquelle le taux est le plus bas parmis tous les autres, et à partir du moment où la durée est inférieur à celle du prêt

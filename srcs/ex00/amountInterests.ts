@@ -1,4 +1,4 @@
-import amountMonthly from "../utils/amountMonthly"
+import { amountMonthly } from "../utils/formulas"
 
 /**
  * find the total amount of interests on a loan

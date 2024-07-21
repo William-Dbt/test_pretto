@@ -1,4 +1,4 @@
-import amountMonthly from "../utils/amountMonthly"
+import { amountMonthly } from "../utils/formulas"
 import amountInterests from "../ex00/amountInterests"
 
 // Cette partie fait part de ma refléxion que vous pouvez retrouver dans le fichier "walkthrough.txt"

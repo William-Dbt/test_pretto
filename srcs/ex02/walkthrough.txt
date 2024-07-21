@@ -5,8 +5,13 @@ Prenons comme référence le tableau donné par l'énoncé :
 Durée en année   | 10  | 12  | 15  | 20  | 22  | 25  |
 Taux annuel en % | 2.9 | 3.2 | 3.5 | 3.8 | 3.8 | 4.4 |
 
-On sait que la durée du prêt total est donnée et donc constante
-On sait aussi que nous devons chercher les combinaisons possibles parmi lesquelles les intérêts seront les plus faibles
-Nous possédons un tableau de taux annuels en % organisé par année, on sait que plus le taux est faible, plus les intérêts seront faibles
+On sait que la durée du prêt total est fixe et donc constante, ça sera un paramètre de notre fonction
+On sait aussi que nous devons chercher les combinaisons possibles parmi lesquelles les intérêts seront les plus faible
+L'idée serait donc, sur une durée du prêt donné (ici pouvant aller de 10, 12, 15, 20, 22 ou 25 ans), calculer les montants des prêts grâce à la formule de mensualité lissé
+Pour chaque combinaison `[taux | montant] | [taux | montant]`, nous calculerons la mensualité lissé, on le multipliera pas la durée totale du prêt pour retrouver le montant des intérêts
 
-TO BE CONTINUED
+Pour se faire, notre premier taux sur lequel nous baserons notre recherche sera celui où la durée correspond à celle demandée ([25, 4.4] pour une durée de 25 ans)
+Concernant le montant du prêt, nous nous baserons du montant total divisé par 2 et augmenterons le montant du prêt court et diminuerons le montant du prêt long petit à petit jusqu'à trouver le plus petit montant des intérêts possible
+Nous procédons de la sorte car nous savons que le prêt long aura un taux plus haut que le prêt court et, plus le prêt court sera élevé, moins nous payerons d'intérêts (dans une certaine limite, que nous esseyons de trouver ici)
+
+Pour des raisons d'optimisation, nous incrémenterons les montants des prêts de 1000 en 1000

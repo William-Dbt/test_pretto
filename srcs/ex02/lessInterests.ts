@@ -21,7 +21,7 @@ const arr_rates: Map<number, number> = new Map<number, number>([
  * @param loanAmount	the loan amount
  * @returns an object containing the information of the two loans where the interests will be the lowest possible
  */
-function findLessInterests(loanDuration: number, loanAmount: number) {
+export function findLessInterests(loanDuration: number, loanAmount: number) {
 	// - Error conditions
 	if (!loanDuration || !loanAmount) {
 		console.error("[findLessInterests] ERROR: at least one parameter is invalid");
@@ -29,6 +29,10 @@ function findLessInterests(loanDuration: number, loanAmount: number) {
 	}
 	if (!arr_rates.get(loanDuration)) {
 		console.error("[findLessInterests] ERROR: can't find a rate for this loan duration (", loanDuration, "years)");
+		return undefined;
+	}
+	if (arr_rates.get(loanDuration)! <= 0) {
+		console.error("[findLessInterests] ERROR: loan rate for the given duration is invalid");
 		return undefined;
 	}
 	if (loanAmount < 50000) {
@@ -60,6 +64,9 @@ function findLessInterests(loanDuration: number, loanAmount: number) {
 
 	for (let [duration, rate] of arr_rates) {
 		if (duration == loanDuration)
+			continue ;
+
+		if (duration <= 0 || rate <= 0)
 			continue ;
 
 		// change du duration in years to months
@@ -103,7 +110,7 @@ function findLessInterests(loanDuration: number, loanAmount: number) {
  * @param secondLoanAmount 	second loan amount
  * @returns an object containing the information of the two loans where the interests will be the lowest possible
  */
-function findLessInterestsByAmounts(loanDuration: number, firstLoanAmount: number, secondLoanAmount: number) {
+export function findLessInterestsByAmounts(loanDuration: number, firstLoanAmount: number, secondLoanAmount: number) {
 	// - Error conditions
 	if (!loanDuration || !firstLoanAmount || !secondLoanAmount) {
 		console.error("[findLessInterests] ERROR: at least one parameter is invalid");
@@ -111,6 +118,10 @@ function findLessInterestsByAmounts(loanDuration: number, firstLoanAmount: numbe
 	}
 	if (!arr_rates.get(loanDuration)) {
 		console.error("[findLessInterests] ERROR: can't find a rate for this loan duration (", loanDuration, "years)");
+		return undefined;
+	}
+	if (arr_rates.get(loanDuration)! <= 0) {
+		console.error("[findLessInterests] ERROR: loan rate for the given duration is invalid");
 		return undefined;
 	}
 	if ((firstLoanAmount + secondLoanAmount) < 50000) {
@@ -140,6 +151,9 @@ function findLessInterestsByAmounts(loanDuration: number, firstLoanAmount: numbe
 
 	for (let [duration, rate] of arr_rates) {
 		if (duration == loanDuration)
+			continue ;
+
+		if (duration <= 0 || rate <= 0)
 			continue ;
 
 		// change du duration in years to months

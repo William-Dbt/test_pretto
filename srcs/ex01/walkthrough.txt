@@ -31,4 +31,29 @@ D'après l'exemple, la mensualité du premier prêt + les intérêts par mois du
 
 ----------------------------------------
 
+Solution algorithmique avec plus de recherches :
 
+Il faut trouver un ratio maximum tel que les mensualités de M2 soient le paiement des intérêts de M2
+=> Le ratio peut être reformulé de la sorte :
+ratio = M1 / Mtotal = M1 / (M1 + M2)
+
+On ne connait ni M1, ni M2 mais on peut s'aider des formules données par le sujet comme :
+la formule de mensualité classique : m = M * rho(taux, duree)
+la formule de mensualité lissée : m = (M2 + (m1 / rho(taux2, duree1))) * rho(taux2, duree2)
+La formule du coefficient d'anuité : rho(taux, duree) = taux / (1 - (1 + taux)^-duree)
+
+On sait que le prêt court correspond à un prêt amortissable classique et que le prêt est lissé sur le prêt 1
+À partir de là, on peut trouver M1 et M2 grâce aux formules précédentes
+
+m1 = M1 * rho(t1, d1)
+M1 = m1 / rho(t1, d1)
+
+m2 = (M2 + (m1 / rho(t2, d1))) * rho(t2, d2)
+M2 + m1 / rho(t2, d1) = m2 / rho(t2, d2)
+M2 = (m2 / rho(t2, d2)) - (m1 / rho(t2, d1))
+
+On pourra retrouver les taux et durées dans les paramètres de la fonction mais, les mensualités m1 et m2 restent inconnues.
+On peut admettre que m2 = 1 - m1 où '1' correspond à la valeur maximum des mensualitées totales à payer
+Le but est de trouver le ratio maximum où m2 correspondra aux intérêts de M2 à payer, on peut donc faire varier m1 entre 0 et 1 jusqu'à trouver la plus grande valeur de ratio
+
+Partant de ce constat, on peut créer un algorithme où on incrémentera m1 à chaque itération pour trouver le plus haut ratio possible.

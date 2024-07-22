@@ -1,4 +1,5 @@
 import amountInterests from "./ex00/amountInterests";
+import { ratio } from "./ex01/ratio";
 import { findLessInterests, findLessInterestsByAmounts } from "./ex02/lessInterests";
 
 console.log("------------------------------");
@@ -27,7 +28,8 @@ console.log("\n------------------------------\n");
 
 console.log("- Tests for ex01\n");
 
-console.log(".....");
+console.log("Ratio for loan : [1.15, 180, 1.8, 300]");
+console.log("La part maximum du prêt numéro 2 sur la période courte doit être de", ratio(1.15, 180, 1.8, 300), "%");
 
 console.log("\n------------------------------\n");
 console.log("- Tests for ex02\n");

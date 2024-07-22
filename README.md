@@ -6,7 +6,7 @@ This repository will be only used to show my answers to managers of Pretto for a
 
 ## Usage
 
-Be sure to have installed node.js on your computer. Then, launch the compileFiles.sh script to compile my files from typescript to javascript  
+Be sure to have installed node.js on your computer. Then, launch the compileFiles.sh script to compile my files from typescript to javascript (please be sure you have typescript package installed)  
 The script will execute the main.ts(js) file to print some tests that I did.  
 If you want to execute a particular file, just type `node nameOfTheFile.js`  
 

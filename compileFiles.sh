@@ -6,5 +6,3 @@ fi
 
 tsc
 node srcs/main.js
-
-

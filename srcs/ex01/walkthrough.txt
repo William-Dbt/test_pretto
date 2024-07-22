@@ -27,4 +27,8 @@ amountInterests(1.8, 300, 160000) -> 38809€
 
 Prenons ce montant et divisions le par 180 pour connaître le montant des intérêts maximum sur un mois pendant la période courte: 38809 / 180 = 215,60€
 
-D'après l'exemple, la mensualité du premier prêt + les intérêts par mois du deuxième vaudrait : 847,16 + 215,60 = 1062,76€, il manque 152,24€ pour atteindre le montant des mensualités du prêt lissé (1215,84€) -> Impasse
+D'après l'exemple, la mensualité du premier prêt + les intérêts par mois du deuxième vaudrait : 847,16 + 215,60 = 1062,76€, il manque 152,24€ pour atteindre le montant des mensualités du prêt lissé (1215,84€) -> Impasse et mauvaise comprehension de la question
+
+----------------------------------------
+
+
